@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Print Styles */
+@media print {
+  /* Hide navigation and other non-essential elements */
+  #navigation,
+  button,
+  .MuiButton-root {
+    display: none !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .MuiCard-root,
+  .MuiTableContainer-root {
+    page-break-inside: avoid;
+  }
+  
+  /* Optimize colors for printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Ensure charts are visible */
+  .recharts-wrapper {
+    page-break-inside: avoid;
+  }
+  
+  /* Better spacing for print */
+  body {
+    margin: 0;
+    padding: 20px;
+  }
+}
